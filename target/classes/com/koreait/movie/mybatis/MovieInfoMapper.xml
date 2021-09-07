@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="MovieInfo">
+<!-- 
+	<insert id="insert" parameterType="MovieInfo">
+		insert into movieinfo(image,i_title,director,actor,genre,basic,date,plot)
+		 values(#{image},#{i_title},#{director},#{actor},#{genre},#{basic},#{basic},#{plot})
+	</insert>
+	 -->
+	 <insert id="insert" parameterType="MovieInfo">
+		insert into movieinfo(title,image,i_title,spec,plot)
+		 values(#{title},#{image},#{i_title},#{spec},#{plot})
+	</insert>
+	<select id="selectAll" resultType="MovieInfo">
+		select * from movieinfo
+	</select>	
+	<select id="select" parameterType="String" resultType="MovieInfo">
+		select * from movieinfo where title=#{title}
+	</select>
+	
+	<delete id="deleteAll">
+		delete from movieinfo
+	</delete>
+	
+</mapper>

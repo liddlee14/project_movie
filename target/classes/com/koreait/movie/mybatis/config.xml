@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<typeAliases>
+		<typeAlias type="com.koreait.movie.domain.Admin" alias="Admin"/>
+		<typeAlias type="com.koreait.movie.domain.Client" alias="Client"/>
+		<typeAlias type="com.koreait.movie.domain.CgvChart" alias="CgvChart"/>
+		<typeAlias type="com.koreait.movie.domain.Board" alias="Board"/>
+		<typeAlias type="com.koreait.movie.domain.Reboard" alias="Reboard"/>
+		<typeAlias type="com.koreait.movie.domain.Comment" alias="Comment"/>
+		<typeAlias type="com.koreait.movie.domain.Premovie" alias="Premovie"/>
+		<typeAlias type="com.koreait.movie.domain.MovieInfo" alias="MovieInfo"/>
+		<typeAlias type="com.koreait.movie.domain.PreInfo" alias="PreInfo"/>
+		<typeAlias type="com.koreait.movie.domain.Reserv" alias="Reserv"/>
+	</typeAliases>
+
+	<mappers>
+		<mapper resource="com/koreait/movie/mybatis/AdminMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/ClientMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/CgvMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/BoardMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/ReboardMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/CommentMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/PremovieMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/MovieInfoMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/PreInfoMapper.xml" />
+		<mapper resource="com/koreait/movie/mybatis/ReservMapper.xml" />
+	</mappers>
+</configuration>

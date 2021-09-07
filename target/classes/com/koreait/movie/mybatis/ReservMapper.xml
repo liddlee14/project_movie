@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Reserv">
+   
+   <select id="selectAll" resultType="Reserv">
+      select * from reserv 
+   </select>
+
+   <select id="select" resultType="Reserv" parameterType="int">
+      select * from reserv where client_id=#{client_id} 
+   </select>
+      
+   <insert id="insert" parameterType="Reserv">
+      insert into reserv(client_id,movie,theater,area,date,time) values(#{client_id},#{movie},#{theater},#{area},#{date},#{time})
+   </insert>
+
+   
+   <update id="updateSeat" parameterType="String">
+      update reserv set seat=#{seat} where seat is null
+   </update>
+   
+   <delete id="delete" parameterType="int">
+      delete from reserv where reserv_id=#{reserv_id}
+   </delete>
+   
+   <delete id="delete1" parameterType="int">
+      delete from reserv where client_id=#{client_id}
+   </delete>
+   
+   
+
+</mapper>

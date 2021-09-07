@@ -1,0 +1,120 @@
+create table admin(
+     admin_id  int  primary key auto_increment 
+   , host_id varchar(20)
+   , name varchar(20)
+   , password varchar(20)  
+   , birth varchar(20)
+   , email varchar(50)
+   , phone varchar(20)
+) default character set utf8;
+
+insert into admin(host_id,name,password,birth,email,phone)
+values('aaaa','성준','1234','940916','aaa@daum.net','010-1111-2222');
+
+create table client(
+     client_id  int  primary key auto_increment 
+   , user_id varchar(20)
+   , name varchar(20)
+   , password varchar(20)  
+   , birth varchar(20)
+   , email varchar(50)
+   , phone varchar(20)
+) default character set utf8;
+
+insert into client(user_id,name,password,birth,email,phone)
+values('aaaa','성준','1234','940916','aaa@daum.net','010-1111-2222');
+
+create table board(
+ board_id int primary key auto_increment
+, title varchar(100)
+, writer varchar(20)
+, content text
+, regdate timestamp default now()
+, hit int default 0
+) default character set utf8;
+
+create table customer(
+customer_id int primary key auto_increment
+ ,client_id varchar(20)
+ ,c_title varchar(30)
+ ,content text
+ ,regdate timestamp default now()
+) default character set utf8;
+
+create table reboard(
+	reboard_id int primary key auto_increment
+, title varchar(100)
+, writer varchar(20)
+, content text
+, regdate timestamp default now()
+, hit int default 0
+, team int default 0
+, step int default 0
+, depth int default 0
+) default character set utf8; 
+
+
+alter table premovie add unique uk_ptitle (p_title)
+alter table cgvchart add unique uk_title (title)
+
+ create table movieinfo(
+ info_id int primary key auto_increment,
+ title varchar(20),
+ image varchar(100),
+ i_title varchar(30),
+ spec text,
+ plot text,
+ , constraint fk_title foreign key (title)
+references cgvchart(title)
+ )default character set utf8;
+
+
+ create table preinfo(
+pi_id int primary key auto_increment,
+ p_title varchar(20),
+ image varchar(100),
+ i_title varchar(30),
+ spec text,
+ plot text,
+ , constraint fk_ptitle foreign key (p_title)
+references premovie(p_title)
+ )default character set utf8;
+
+ create table reserv(
+  reserv_id int primary key auto_increment,
+  client_id int 
+ ,movie varchar(50)
+ ,theater varchar(20)
+ ,area varchar(20)
+ ,date varchar(20)
+ ,time varchar(20)
+ ,seat varchar(100)
+,constraint fk_client foreign key (client_id)
+references client(client_id)
+ ) default character set utf8;
+
+create table cgvchart(
+chart_id int primary key auto_increment,
+rank varchar(20),
+img varchar(100),
+title varchar(20),
+date varchar(20)
+)default character set utf8;
+
+
+ create table movieinfo(
+ info_id int primary key auto_increment,
+ title varchar(20),
+ image varchar(100),
+ i_title varchar(30),
+ spec text,
+ plot text,
+ constraint fk_title foreign key (title)
+references cgvchart(title)
+ )default character set utf8;
+ alter table cgvchart add unique uk_title (title)
+
+
+
+
+
